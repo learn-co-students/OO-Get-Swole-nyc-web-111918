@@ -1,3 +1,4 @@
+
 class Gym
  ALL = []
 
@@ -19,6 +20,25 @@ class Gym
     Membership.all.select do |m|
       m.gym == self
     end
+  end
+
+  def lifters
+    self.memberships.map do |m|
+      m.lifter
+    end
+  end
+
+  def lifters_names
+    self.lifters.map do |l|
+      l.name
+    end
+  end
+
+  def lift_total
+  total =  self.lifters.map do |l|
+      l.lift_total
+    end
+    total.inject(0, :+)
   end
 
 
