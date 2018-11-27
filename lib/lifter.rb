@@ -1,14 +1,18 @@
 
 class Lifter
 
-
-
   attr_reader :name, :lift_total
+
+    @@all =[]
+
+    def self.all
+      @@all
+    end
 
   def initialize(name, lift_total)
     @name = name
     @lift_total = lift_total
-
+    @@all << self
   end
 
   def memberships
@@ -31,6 +35,13 @@ class Lifter
     end
   end
 
+  def self.average
+    @@all.reduce(0) { |acc, iti| acc + iti.lift_total}/(@@all.count.to_f)
+  end
 
+  def membership_cost(gym)
+    Membership.all.find { |memb| (memb.gym == gym && memb.lifter == self) }.
+    cost
+  end
 
 end

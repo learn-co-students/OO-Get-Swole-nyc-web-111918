@@ -3,6 +3,12 @@ class Gym
 
   attr_reader :name
 
+  @@all =[]
+
+  def self.all
+    @@all
+  end
+
   def initialize(name)
     @name = name
     ALL << self
@@ -21,5 +27,11 @@ class Gym
     end
   end
 
+  def lifters
+    memberships.map { |memb| memb.lifter.name }
+  end
 
+  def lift_total
+    memberships.reduce(0) { |acc, iti| acc + iti.lifter.lift_total }
+  end
 end
