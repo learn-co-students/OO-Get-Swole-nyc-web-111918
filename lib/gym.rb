@@ -21,5 +21,24 @@ class Gym
     end
   end
 
+  def lifters
+    self.memberships.map do |m|
+      m.lifter
+    end
+  end
+
+  def names
+    lifters.map do |l|
+      l.name
+    end
+  end
+
+  def lift_total
+    lift_total = 0
+    lifters.each do |l|
+      lift_total += l.lift_total
+    end
+    lift_total
+  end
 
 end

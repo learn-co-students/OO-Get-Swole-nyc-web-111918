@@ -1,4 +1,5 @@
 class Membership
+
   ALL = []
 
   attr_reader :cost, :lifter, :gym
@@ -10,9 +11,10 @@ class Membership
     ALL << self
   end
 
-  def self.all 
+  def self.all
     ALL
   end
+
 
 
 end
