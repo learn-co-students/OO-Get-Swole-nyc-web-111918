@@ -1,25 +1,32 @@
 class Gym
- ALL = []
+ @@all = []
 
   attr_reader :name
 
   def initialize(name)
     @name = name
-    ALL << self
+    @@all << self
 
   end
 
   def self.all
-    ALL
+    @@all
   end
 
   def memberships
-    #Access all memberships => [Memberships]
-    #determine wheter or not the membership belongs to this gym (self)
-    Membership.all.select do |m|
-      m.gym == self
-    end
+    Membership.all.select { |m| m.gym == self }
   end
 
+  def lifters
+    memberships.map {|m| m.lifter}
+  end
+
+  def lifters_names
+    lifters.map { |lifter| lifter.name}
+  end
+
+  def lift_total
+    lifters.map {|lifter| lifter.lift_total}.reduce(:+)
+  end
 
 end
