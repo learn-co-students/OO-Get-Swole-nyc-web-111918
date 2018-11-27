@@ -8,11 +8,10 @@ Here's what we need to be able to do.
 
 **Lifter**
 
-  - Get a list of all lifters
+~  - Get a list of all lifters ~
 
-  - Get a list of all the memberships that a specific lifter has
 
-  - Get a list of all the gyms that a specific lifter has memberships to
+~  - Get a list of all the gyms that a specific lifter has memberships to ~
 
   - Get the average lift total of all lifters
 
@@ -22,7 +21,7 @@ Here's what we need to be able to do.
 
 **Membership**
 
-  - Get a list of all memberships
+~ Get a list of all memberships ~
 
 **Gym**
 

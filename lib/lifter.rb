@@ -1,6 +1,11 @@
 
 class Lifter
 
+  @@all = []
+
+  def self.all
+    @@all
+  end
 
 
   attr_reader :name, :lift_total
