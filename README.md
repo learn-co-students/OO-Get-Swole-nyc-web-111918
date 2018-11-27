@@ -11,7 +11,7 @@ Here's what we need to be able to do.
 ~  - Get a list of all lifters ~
 
 
-~  - Get a list of all the gyms that a specific lifter has memberships to ~
+<strike>  - Get a list of all the gyms that a specific lifter has memberships to </strike>
 
   - Get the average lift total of all lifters
 
