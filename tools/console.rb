@@ -1,21 +1,19 @@
-#require_relative '../config/environment.rb'
-require_relative '../lib/gym.rb'
-require_relative '../lib/lifter.rb'
-require_relative '../lib/membership.rb'
-require'pry'
+# You don't need to require any of the files in lib or pry.
+# We've done it for you here.
+require_relative '../config/environment.rb'
 
-def reload
-  load 'config/environment.rb'
-end
+# test code goes here
 
-jordan = Lifter.new("Jordan", 9999999)
+jordan = Lifter.new("Jordan", 100)
+matt = Lifter.new("Matt", 150)
 twenty4 = Gym.new("24 Hour Fitness")
 gm2 = Gym.new("OOOO YEAAAHHH!!")
-hole_in_pocket = Membership.new(40, jordan, twenty4)
-hole_in_pocket = Membership.new(80, jordan, gm2)
-
+m1 = Membership.new(40, jordan, twenty4)
+m2 = Membership.new(80, jordan, gm2)
+m3 = Membership.new(30, matt, gm2)
 
 
 
 binding.pry
- puts "amazing"
+puts "Gains!"
+puts "amazing"
