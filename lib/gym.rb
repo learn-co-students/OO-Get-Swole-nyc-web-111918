@@ -21,5 +21,16 @@ class Gym
     end
   end
 
+  def lifters
+      memberships.map {|object| object.lifter}
+  end
 
+  def lifter_names
+      memberships.map {|object| object.lifter.name}
+  end
+
+
+  def lift_total
+    memberships.map {|object| object.lifter.lift_total}.reduce(:+)
+  end
 end

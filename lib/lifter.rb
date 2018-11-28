@@ -1,14 +1,18 @@
-
+require 'pry'
 class Lifter
 
 
 
   attr_reader :name, :lift_total
-
+  @@all = []
   def initialize(name, lift_total)
     @name = name
     @lift_total = lift_total
+    @@all << self
+  end
 
+  def self.all
+    @@all
   end
 
   def memberships
@@ -31,6 +35,20 @@ class Lifter
     end
   end
 
+  def self.avg_lift_total
+    #binding.pry
+    total = self.all.map {|lifter| lifter.lift_total}
+    total.inject{ |sum, el| sum + el }.to_f / total.length
+  end
 
+  def membership_cost
+      memberships.map do |attribute|
+        attribute.cost
+        #binding.pry
+    end.reduce(:+)
+  end
 
+  def signup(gym, membership_cost)
+    Membership.new(membership_cost, self, gym)
+  end
 end
